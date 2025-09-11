@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Spark-like 3D Motion Animations */
+@keyframes spark-float-1 {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) scale(1);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate3d(30px, -40px, 20px) rotateX(180deg) rotateY(90deg) scale(1.5);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate3d(-20px, -80px, -15px) rotateX(360deg) rotateY(180deg) scale(0.8);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate3d(50px, -60px, 30px) rotateX(540deg) rotateY(270deg) scale(1.2);
+    opacity: 0.9;
+  }
+}
+
+@keyframes spark-float-2 {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) scale(1);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate3d(-40px, -50px, 25px) rotateX(120deg) rotateY(120deg) scale(1.8);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translate3d(60px, -30px, -20px) rotateX(240deg) rotateY(240deg) scale(0.6);
+    opacity: 0.5;
+  }
+}
+
+@keyframes spark-float-3 {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) scale(1);
+    opacity: 0.5;
+  }
+  20% {
+    transform: translate3d(25px, -70px, 15px) rotateX(72deg) rotateY(144deg) scale(1.3);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translate3d(-35px, -40px, -25px) rotateX(144deg) rotateY(288deg) scale(0.9);
+    opacity: 0.4;
+  }
+  60% {
+    transform: translate3d(45px, -90px, 20px) rotateX(216deg) rotateY(432deg) scale(1.6);
+    opacity: 0.9;
+  }
+  80% {
+    transform: translate3d(-15px, -20px, -10px) rotateX(288deg) rotateY(576deg) scale(0.7);
+    opacity: 0.6;
+  }
+}
+
+@keyframes spark-trail {
+  0% {
+    transform: translate3d(0px, 0px, 0px) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate3d(100px, -100px, 50px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(200px, -200px, 100px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes spark-burst {
+  0% {
+    transform: translate3d(0px, 0px, 0px) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    transform: translate3d(50px, -50px, 25px) scale(1.5) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate3d(100px, -100px, 50px) scale(1) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translate3d(150px, -150px, 75px) scale(0.5) rotate(270deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(200px, -200px, 100px) scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes spark-zigzag {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0px) rotateZ(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate3d(40px, -30px, 20px) rotateZ(90deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate3d(-30px, -60px, -15px) rotateZ(180deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translate3d(60px, -90px, 30px) rotateZ(270deg);
+    opacity: 0.5;
+  }
+}
+
+/* Animation Classes */
+.animate-spark-float-1 {
+  animation: spark-float-1 3s ease-in-out infinite;
+}
+
+.animate-spark-float-2 {
+  animation: spark-float-2 4s ease-in-out infinite;
+}
+
+.animate-spark-float-3 {
+  animation: spark-float-3 5s ease-in-out infinite;
+}
+
+.animate-spark-trail {
+  animation: spark-trail 2s linear infinite;
+}
+
+.animate-spark-burst {
+  animation: spark-burst 3s ease-out infinite;
+}
+
+.animate-spark-zigzag {
+  animation: spark-zigzag 2.5s ease-in-out infinite;
+}
+
+/* Custom Button Styles */
+.btn-primary {
+  @apply px-8 py-4 bg-blue-500 dark:bg-blue-400 text-white rounded-full font-semibold hover:bg-blue-600 dark:hover:bg-blue-500 transform hover:scale-105 transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply px-8 py-4 bg-transparent border-2 border-blue-500 dark:border-blue-400 text-blue-500 dark:text-blue-400 rounded-full font-semibold hover:bg-blue-500 dark:hover:bg-blue-400 hover:text-white transform hover:scale-105 transition-all duration-300;
+}
+
+/* Color System */
+:root {
+  --bg-primary: #F9FAFB;
+  --text-primary: #1F2937;
+  --accent: #3B82F6;
+  --secondary: #E5E7EB;
+}
+
+.dark {
+  --bg-primary: #111827;
+  --text-primary: #F3F4F6;
+  --accent: #60A5FA;
+  --secondary: #1F2937;
+}
