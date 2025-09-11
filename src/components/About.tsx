@@ -19,11 +19,12 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Profile Image */}
+
             <div className="relative">
               <img
-                src="/Gemini_Generated_Image_k18bxlk18bxlk18b.png"
+                src="./src/assets/Gemini_Generated_Image_k18bxlk18bxlk18b.png"
                 alt="Profile"
-                className="w-120 h-120 mx-auto rounded-2xl shadow-2xl object-cover"
+                className="w-80 h-80 mx-auto rounded-2xl shadow-2xl object-cover"
               />
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-purple-500 rounded-full opacity-20"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-teal-500 rounded-full opacity-20"></div>

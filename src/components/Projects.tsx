@@ -14,7 +14,7 @@ const Projects = () => {
       title: "MyTrip – Airline Management & Booking System",
       description:
         "MyTrip is a sophisticated web-based system for flight reservations, designed to offer a modern and seamless user experience. Passengers can effortlessly search, book, update, cancel, and manage payments for their flights. Built with React, JavaScript, HTML, CSS, and integrated with various APIs, MyTrip emphasizes speed, reliability, and an intuitive interface. The branding concept features a dynamic 3D airplane effect that enhances the user's journey, making flight booking a visually engaging process.",
-      image: "/MyTrip Website.png",
+      image: "./src/assets/MyTrip Website.png",
       technologies: ["React", "JavaScript", "HTML", "CSS", "APIs"],
       features: [
         "Flight search and booking",
@@ -31,7 +31,7 @@ const Projects = () => {
       title: "Autonomous Drone System",
       description:
         "Advanced frontend-backend integration for autonomous drone control using DroneKit-Python, MAVLink protocol, and React. Features real-time telemetry, flight path planning, and mission control interface.",
-      image: "/Autonomus drone Project.jpg",
+      image: "./src/assets/Autonomus drone Project.jpg",
       technologies: [
         "React",
         "Python",

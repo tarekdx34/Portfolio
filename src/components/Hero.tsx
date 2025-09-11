@@ -211,7 +211,7 @@ const Hero = () => {
             </button>
 
             <a
-              href="/Tarek Mohamed Salah.pdf"
+              href="./src/assets/Tarek Mohamed Salah.pdf"
               download="Tarek Mohamed Salah.pdf"
               className="btn-primary flex items-center justify-center gap-2"
             >

@@ -44,7 +44,11 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <img src="/Logo.svg" alt="Logo" className="h-20 w-auto dark:invert" />
+          <img
+            src="./src/assets/Logo.svg"
+            alt="Logo"
+            className="h-20 w-auto dark:invert"
+          />
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex space-x-8">
