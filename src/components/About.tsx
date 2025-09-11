@@ -1,5 +1,6 @@
 import React from "react";
 import { User, MapPin, Calendar } from "lucide-react";
+import GeminiImage from "../assets/Gemini_Generated_Image_k18bxlk18bxlk18b.png";
 
 const About = () => {
   return (
@@ -22,7 +23,7 @@ const About = () => {
 
             <div className="relative">
               <img
-                src="./src/assets/Gemini_Generated_Image_k18bxlk18bxlk18b.png"
+                src={GeminiImage}
                 alt="Profile"
                 className="w-80 h-80 mx-auto rounded-2xl shadow-2xl object-cover"
               />

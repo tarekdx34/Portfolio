@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
+import Logo from "../assets/Logo.svg";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
@@ -44,12 +45,7 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <img
-            src="./src/assets/Logo.svg"
-            alt="Logo"
-            className="h-20 w-auto dark:invert"
-          />
-
+          <img src={Logo} alt="Logo" className="h-20 w-auto dark:invert" />
           {/* Desktop Navigation */}
           <ul className="hidden md:flex space-x-8">
             {navItems.map((item) => (
@@ -63,7 +59,6 @@ const Header = () => {
               </li>
             ))}
           </ul>
-
           <div className="flex items-center space-x-4">
             {/* Theme Toggle */}
             <button
