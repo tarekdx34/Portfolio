@@ -1,6 +1,6 @@
 ﻿# 🌐 Personal Portfolio
 
-![Portfolio Preview]([https://via.placeholder.com/1200x600?text=Portfolio+Preview](https://portfolio-mu-virid-41.vercel.app/))  
+![Portfolio Preview](https://portfolio-mu-virid-41.vercel.app/) 
 _A modern, minimalist, and responsive developer portfolio built to showcase my projects, skills, and journey._
 
 ---
@@ -43,4 +43,5 @@ npm install
 # Start development server
 npm run dev
 ```
+
 
