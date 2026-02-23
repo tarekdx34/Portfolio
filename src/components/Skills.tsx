@@ -1,11 +1,12 @@
 const Skills = () => {
   const frontendSkills = [
     { name: "React / TypeScript", level: 95 },
-    { name: "Tailwind CSS", level: 98 },
     { name: "JavaScript (ES6+)", level: 95 },
     { name: "HTML5 / CSS3", level: 98 },
+    { name: "Tailwind CSS", level: 98 },
     { name: "shadcn/ui / Radix UI", level: 90 },
     { name: "React Hook Form / Zod", level: 85 },
+    { name: "Responsive Design", level: 95 },
   ];
 
   const hardSystemSkills = [

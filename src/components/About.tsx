@@ -28,27 +28,23 @@ const About = () => {
             01. Profile Summary
           </h2>
           <h3 className="text-4xl md:text-5xl font-black mb-10 leading-tight text-[var(--text)]">
-            Bridging Hardware Precision with Software Fluidity
+            Frontend Engineer with Full-Stack Firepower
           </h3>
           <p className="text-[var(--text-muted)] mb-8 leading-relaxed text-lg">
-            Software Engineer and senior Electronics & Communication Engineering
-            student with proven experience building production-ready web
-            applications. Skilled in React, TypeScript, and JavaScript with a
-            strong foundation in software architecture, API integration, and
-            full-stack development principles.
+            Software Engineer specializing in frontend development with proven experience delivering production-ready web applications under tight deadlines. Expert in React, TypeScript, and modern UI frameworks — with hands-on backend skills in Java Spring Boot, Node.js, and RESTful API design. Successfully shipped commercial projects including paid client work, combining pixel-perfect interfaces with robust system architecture.
           </p>
           <div className="grid grid-cols-1 gap-4 font-mono text-xs uppercase tracking-widest text-[var(--text)]">
             <div className="flex items-center gap-4 p-4 border border-[var(--border)] hover:border-[var(--primary)]/40 transition-colors">
               <span className="text-[var(--primary)] font-bold">01.</span>{" "}
-              High-Performance React Architectures
+              Production-Ready React & TypeScript Systems
             </div>
             <div className="flex items-center gap-4 p-4 border border-[var(--border)] hover:border-[var(--primary)]/40 transition-colors">
               <span className="text-[var(--primary)] font-bold">02.</span>{" "}
-              Hardware-Software Interface Optimization
+              Full-Stack Delivery: Frontend Lead + Backend Architecture
             </div>
             <div className="flex items-center gap-4 p-4 border border-[var(--border)] hover:border-[var(--primary)]/40 transition-colors">
               <span className="text-[var(--primary)] font-bold">03.</span>{" "}
-              Scalable System Design Patterns
+              Commercial Projects Shipped Under Pressure
             </div>
           </div>
         </div>

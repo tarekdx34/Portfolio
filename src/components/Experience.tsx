@@ -3,7 +3,7 @@ const Experience = () => {
     {
       title: "Software Engineer Intern",
       company: "Alex Eagles Aero Design",
-      period: "2024 — PRESENT // ALEXANDRIA",
+      period: "2024 — 2025 // ALEXANDRIA",
       description:
         "Developed Python scripts for autonomous drone movement and obstacle avoidance. Implemented mapping techniques for terrain analysis and real-time decision-making in flight operations. Applied embedded systems and software architecture knowledge in UAV control systems.",
       tags: ["PYTHON", "DRONEKIT", "REACT", "EMBEDDED SYSTEMS"],
@@ -30,7 +30,9 @@ const Experience = () => {
           <h2 className="font-mono text-[var(--primary)] text-xs mb-4 uppercase tracking-[0.5em]">
             02. Experience Logs
           </h2>
-          <h3 className="text-4xl font-black text-[var(--text)]">Professional Trajectory</h3>
+          <h3 className="text-4xl font-black text-[var(--text)]">
+            Professional Trajectory
+          </h3>
         </div>
 
         <div className="space-y-16 relative before:absolute before:left-[11px] before:top-0 before:h-full before:w-[1px] before:bg-[var(--border)]">
@@ -39,22 +41,30 @@ const Experience = () => {
               {/* Timeline dot */}
               <div
                 className={`absolute left-0 top-1.5 w-6 h-6 bg-[var(--background)] border ${
-                  exp.current ? "border-[var(--primary)]" : "border-[var(--text-muted)]"
+                  exp.current
+                    ? "border-[var(--primary)]"
+                    : "border-[var(--text-muted)]"
                 } flex items-center justify-center`}
               >
                 <div
                   className={`w-2 h-2 ${
-                    exp.current ? "bg-[var(--primary)]" : "bg-[var(--text-muted)]"
+                    exp.current
+                      ? "bg-[var(--primary)]"
+                      : "bg-[var(--text-muted)]"
                   }`}
                 ></div>
               </div>
 
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                 <div>
-                  <h4 className="text-2xl font-bold text-[var(--text)]">{exp.title}</h4>
+                  <h4 className="text-2xl font-bold text-[var(--text)]">
+                    {exp.title}
+                  </h4>
                   <p
                     className={`font-mono text-xs uppercase mt-1 ${
-                      exp.current ? "text-[var(--primary)]" : "text-[var(--text-muted)]"
+                      exp.current
+                        ? "text-[var(--primary)]"
+                        : "text-[var(--text-muted)]"
                     }`}
                   >
                     {exp.company}

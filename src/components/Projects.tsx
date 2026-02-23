@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import MyTripImage from "../assets/MyTrip Website.png";
 import DroneImage from "../assets/Autonomus drone Project.jpg";
 import AjarlyImage from "../assets/Ajarly.png";
@@ -8,6 +9,7 @@ const Projects = () => {
       description:
         "A comprehensive real estate rental ecosystem connecting property owners, brokers, and renters in Egypt. Led frontend development and contributed significantly to backend architecture, building a production-ready system with JWT authentication, booking with conflict handling, payment simulation, and analytics.",
       image: AjarlyImage,
+      link: "https://ajarly-frontend.vercel.app/",
       tags: ["Full-Stack", "Real Estate"],
       techStack: "Java / Spring / React / TypeScript",
       technologies: [
@@ -165,10 +167,21 @@ const Projects = () => {
               </div>
 
               {/* Footer */}
-              <div className="pt-6 border-t border-[var(--border)]">
+              <div className="pt-6 border-t border-[var(--border)] flex items-center justify-between">
                 <span className="font-mono text-[10px] text-[var(--text-muted)] uppercase font-bold">
                   {project.techStack}
                 </span>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-[var(--primary)] hover:brightness-125 transition-all"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    Live Demo
+                  </a>
+                )}
               </div>
             </div>
           ))}
