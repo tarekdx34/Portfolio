@@ -1,81 +1,54 @@
-import React from "react";
-import { User, MapPin, Calendar } from "lucide-react";
-import GeminiImage from "../assets/Gemini_Generated_Image_k18bxlk18bxlk18b.png";
+import GeminiImage from "../assets/Tarek.jpg";
 
 const About = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
+      className="py-32 relative overflow-hidden bg-[var(--background)]"
     >
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              About Me
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-blue-600 mx-auto rounded-full"></div>
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+        {/* Image */}
+        <div className="relative group">
+          <div className="absolute -inset-4 border border-[var(--primary)]/10 opacity-50"></div>
+          <div className="relative cyber-card p-3 bg-[var(--border)]">
+            <img
+              alt="Tarek Mohamed"
+              className=" transition-all duration-1000 w-full aspect-[4/5] object-cover"
+              src={GeminiImage}
+            />
           </div>
+          <div className="absolute -bottom-4 -right-4 font-mono text-[10px] p-5 bg-[var(--primary)] text-black font-bold uppercase tracking-tighter">
+            CORE_ENGINEER::001
+          </div>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Profile Image */}
-
-            <div className="relative">
-              <img
-                src={GeminiImage}
-                alt="Profile"
-                className="w-80 h-80 mx-auto rounded-2xl shadow-2xl object-cover"
-              />
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-purple-500 rounded-full opacity-20"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-teal-500 rounded-full opacity-20"></div>
+        {/* Content */}
+        <div>
+          <h2 className="font-mono text-[var(--primary)] text-xs mb-6 uppercase tracking-[0.5em]">
+            01. Profile Summary
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-black mb-10 leading-tight text-[var(--text)]">
+            Bridging Hardware Precision with Software Fluidity
+          </h3>
+          <p className="text-[var(--text-muted)] mb-8 leading-relaxed text-lg">
+            Software Engineer and senior Electronics & Communication Engineering
+            student with proven experience building production-ready web
+            applications. Skilled in React, TypeScript, and JavaScript with a
+            strong foundation in software architecture, API integration, and
+            full-stack development principles.
+          </p>
+          <div className="grid grid-cols-1 gap-4 font-mono text-xs uppercase tracking-widest text-[var(--text)]">
+            <div className="flex items-center gap-4 p-4 border border-[var(--border)] hover:border-[var(--primary)]/40 transition-colors">
+              <span className="text-[var(--primary)] font-bold">01.</span>{" "}
+              High-Performance React Architectures
             </div>
-
-            {/* About Content */}
-            <div className="space-y-6">
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                As a passionate Front-End Developer, I craft intuitive and
-                engaging user interfaces using HTML, CSS, JavaScript, and React.
-                My focus is on creating seamless web experiences that captivate
-                users and drive interaction.
-              </p>
-
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                My background in Electronics & Communication Engineering
-                provides a unique edge, with strong skills in C, Python,
-                embedded systems, and digital communications. I'm eager to
-                contribute to innovative projects, building robust and scalable
-                web applications from the ground up.
-              </p>
-
-              {/* Quick Info */}
-              <div className="space-y-4 pt-6">
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-teal-500" />
-                  <span className="text-gray-700 dark:text-gray-300">
-                    Alexandria, Egypt
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <Calendar className="w-5 h-5 text-teal-500" />
-                  <span className="text-gray-700 dark:text-gray-300">
-                    Available for opportunities
-                  </span>
-                </div>
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-6 pt-8">
-                <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-1">
-                    3.41
-                  </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
-                    GPA / 4.0
-                  </div>
-                </div>
-              </div>
+            <div className="flex items-center gap-4 p-4 border border-[var(--border)] hover:border-[var(--primary)]/40 transition-colors">
+              <span className="text-[var(--primary)] font-bold">02.</span>{" "}
+              Hardware-Software Interface Optimization
+            </div>
+            <div className="flex items-center gap-4 p-4 border border-[var(--border)] hover:border-[var(--primary)]/40 transition-colors">
+              <span className="text-[var(--primary)] font-bold">03.</span>{" "}
+              Scalable System Design Patterns
             </div>
           </div>
         </div>

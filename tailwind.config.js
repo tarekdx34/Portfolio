@@ -5,10 +5,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        'bg-primary': 'var(--bg-primary)',
-        'text-primary': 'var(--text-primary)',
-        'accent': 'var(--accent)',
-        'secondary': 'var(--secondary)',
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        'bg-dark': 'var(--background)',
+        'surface-dark': 'var(--surface)',
+        'border-dark': 'var(--border)',
+      },
+      fontFamily: {
+        display: ['Plus Jakarta Sans', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
+      borderRadius: {
+        DEFAULT: '2px',
+        'xl': '8px',
       },
     },
   },

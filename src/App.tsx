@@ -1,4 +1,3 @@
-import React from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -13,7 +12,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <div className="min-h-screen bg-[var(--background)] text-[var(--text)] font-display transition-colors duration-300">
         <Header />
         <main>
           <Hero />

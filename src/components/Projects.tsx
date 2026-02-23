@@ -1,172 +1,177 @@
-import React from "react";
-import {
-  ExternalLink,
-  Github,
-  Bone as Drone,
-  Cpu,
-  Wifi,
-  Plane,
-} from "lucide-react";
 import MyTripImage from "../assets/MyTrip Website.png";
 import DroneImage from "../assets/Autonomus drone Project.jpg";
-
+import AjarlyImage from "../assets/Ajarly.png";
 const Projects = () => {
   const projects = [
     {
-      title: "MyTrip – Airline Management & Booking System",
+      title: "Ajarly - Rental Platform",
       description:
-        "MyTrip is a sophisticated web-based system for flight reservations, designed to offer a modern and seamless user experience. Passengers can effortlessly search, book, update, cancel, and manage payments for their flights. Built with React, JavaScript, HTML, CSS, and integrated with various APIs, MyTrip emphasizes speed, reliability, and an intuitive interface. The branding concept features a dynamic 3D airplane effect that enhances the user's journey, making flight booking a visually engaging process.",
-      image: MyTripImage,
-      technologies: ["React", "JavaScript", "HTML", "CSS", "APIs"],
-      features: [
-        "Flight search and booking",
-        "Update and cancel reservations",
-        "Payment management",
-        "Modern and intuitive interface",
-        "Dynamic 3D airplane effect",
+        "A comprehensive real estate rental ecosystem connecting property owners, brokers, and renters in Egypt. Led frontend development and contributed significantly to backend architecture, building a production-ready system with JWT authentication, booking with conflict handling, payment simulation, and analytics.",
+      image: AjarlyImage,
+      tags: ["Full-Stack", "Real Estate"],
+      techStack: "Java / Spring / React / TypeScript",
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "JWT",
+        "Cloudinary",
       ],
-      icon: Plane,
-      gradient: "from-blue-500 to-indigo-600",
-      overlayText: "MyTrip",
+      features: [
+        "Multi-role system with owner analytics dashboard",
+        "Property listings with Cloudinary image management",
+        "Advanced search with dynamic filters",
+        "Booking/payment processing & admin panel",
+      ],
+    },
+    {
+      title: "My Trip - Flight Booking",
+      description:
+        "First paid frontend project — complete flight booking system from search to electronic ticket issuance. Delivered production-ready system in 10-day timeline with dedicated portals for passengers, crew, front desk, and admin.",
+      image: MyTripImage,
+      tags: ["Frontend", "Logistics"],
+      techStack: "React / Tailwind / Axios",
+      technologies: [
+        "React.js",
+        "Tailwind CSS",
+        "Axios",
+        "React Router",
+        "Radix UI",
+      ],
+      features: [
+        "Flight search with filters & booking/payment",
+        "Electronic ticketing & cancellation handling",
+        "Role-based access with admin dashboard",
+        "Collaborated with Java Spring Boot backend team",
+      ],
     },
     {
       title: "Autonomous Drone System",
       description:
-        "Advanced frontend-backend integration for autonomous drone control using DroneKit-Python, MAVLink protocol, and React. Features real-time telemetry, flight path planning, and mission control interface.",
+        "Comprehensive autonomous drone system with focus on control, navigation, and mission planning. Developed drone control class using DroneKit-Python and MAVLink protocol with real-time mission updates and map visualization.",
       image: DroneImage,
+      tags: ["Full-Stack", "Aerospace"],
+      techStack: "Python / DroneKit / React",
       technologies: [
-        "React",
         "Python",
-        "DroneKit",
+        "DroneKit-Python",
         "MAVLink",
-        "WebSocket",
-        "Node.js",
+        "JavaScript",
+        "React",
+        "Git",
       ],
       features: [
-        "Real-time telemetry monitoring",
-        "Interactive flight path planning",
-        "Autonomous mission execution",
-        "Live video streaming integration",
+        "Drone control with DroneKit-Python & MAVLink",
+        "Backend-frontend integration for real-time updates",
+        "Global path planning & SDK integration",
+        "Team of 6 developers — UI/UX design contribution",
       ],
-      icon: Drone,
-      gradient: "from-teal-500 to-blue-600",
-      overlayText: "Automomus Drone",
     },
   ];
 
   return (
-    <section
-      id="projects"
-      className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
-    >
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Projects
+    <section id="projects" className="py-32 bg-[var(--background)]">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+          <div>
+            <h2 className="font-mono text-[var(--primary)] text-xs mb-4 uppercase tracking-[0.5em]">
+              03. Deployment Phase
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-blue-600 mx-auto rounded-full"></div>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mt-6 max-w-2xl mx-auto">
-              Explore my portfolio of innovative projects that demonstrate my
-              expertise in frontend development and system integration.
-            </p>
+            <h3 className="text-5xl font-black text-[var(--text)]">
+              Featured Operations
+            </h3>
           </div>
+          <p className="text-[var(--text-muted)] font-mono text-xs max-w-sm border-l border-[var(--primary)]/30 pl-6 py-2">
+            Technical solutions engineered for scale and performance across
+            multiple software domains.
+          </p>
+        </div>
 
-          {/* Projects Grid */}
-          <div className="grid gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className={`group ${
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                } flex flex-col lg:flex-row items-center gap-8 bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500`}
-              >
-                {/* Project Image */}
-                <div className="lg:w-1/2 relative overflow-hidden rounded-xl">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 lg:h-80 object-cover transform group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {project.overlayText && (
-                    <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white px-3 py-1 rounded text-sm font-semibold">
-                      {project.overlayText}
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
-
-                  {/* Project Icon */}
-                  <div
-                    className={`absolute top-4 left-4 w-12 h-12 bg-gradient-to-r ${project.gradient} rounded-lg flex items-center justify-center`}
-                  >
-                    <project.icon className="w-6 h-6 text-white" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="group border border-[var(--border)] bg-[var(--surface)] p-8 cyber-card transition-all hover:border-[var(--primary)]/30"
+            >
+              {/* Image */}
+              <div className="aspect-video bg-[var(--background)] mb-8 overflow-hidden relative border border-[var(--border)]">
+                {project.image ? (
+                  <>
+                    <div className="absolute inset-0 bg-[var(--primary)]/5 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                    <img
+                      alt={project.title}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                      src={project.image}
+                    />
+                  </>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center font-mono text-[var(--text-muted)] text-sm">
+                    <span className="text-[var(--primary)] text-4xl font-black opacity-20">
+                      {project.title.split(" ")[0]}
+                    </span>
                   </div>
-                </div>
-
-                {/* Project Content */}
-                <div className="lg:w-1/2 space-y-6">
-                  <div>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  {/* Features */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Key Features:
-                    </h4>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {project.features.map((feature, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-center gap-2 text-gray-600 dark:text-gray-400"
-                        >
-                          <div
-                            className={`w-2 h-2 bg-gradient-to-r ${project.gradient} rounded-full`}
-                          ></div>
-                          <span className="text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Technologies */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                      Technologies:
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-4 pt-4">
-                    <button className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
-                    </button>
-                    <button className="flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-                      <Github className="w-4 h-4" />
-                      View Code
-                    </button>
-                  </div>
-                </div>
+                )}
               </div>
-            ))}
-          </div>
+
+              {/* Tags */}
+              <div className="flex items-center gap-3 mb-6">
+                {project.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className={`px-3 py-1 font-mono text-[9px] uppercase tracking-widest border ${
+                      i === 0
+                        ? "bg-[var(--primary)]/10 text-[var(--primary)] border-[var(--primary)]/20"
+                        : "bg-[var(--text)]/5 text-[var(--text-muted)] border-[var(--text)]/10"
+                    }`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Title & Description */}
+              <h4 className="text-2xl font-black mb-4 text-[var(--text)]">
+                {project.title}
+              </h4>
+              <p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">
+                {project.description}
+              </p>
+
+              {/* Features */}
+              <ul className="space-y-2 mb-6">
+                {project.features.map((feature, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-2 text-[var(--text-muted)] text-xs font-mono"
+                  >
+                    <span className="text-[var(--primary)] mt-0.5">▸</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-1.5 mb-6">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 text-[9px] font-mono bg-[var(--border)] text-[var(--text-muted)]"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Footer */}
+              <div className="pt-6 border-t border-[var(--border)]">
+                <span className="font-mono text-[10px] text-[var(--text-muted)] uppercase font-bold">
+                  {project.techStack}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

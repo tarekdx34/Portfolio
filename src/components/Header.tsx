@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 import Logo from "../assets/Logo.svg";
@@ -11,6 +11,12 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      // Progress bar
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById("progress-bar");
+      if (bar) bar.style.width = scrolled + "%";
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,85 +32,87 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "education", label: "Education" },
-    { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
-    { id: "skills", label: "Skills" },
-    { id: "contact", label: "Contact" },
+    { id: "about", label: "01. Summary" },
+    { id: "experience", label: "02. Logs" },
+    { id: "projects", label: "03. Deployment" },
+    { id: "skills", label: "04. Arsenal" },
+    { id: "contact", label: "05. Link" },
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <img src={Logo} alt="Logo" className="h-20 w-auto dark:invert" />
+    <>
+      <div id="progress-bar" style={{ width: "0%" }}></div>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-[var(--border)] ${
+          isScrolled
+            ? "bg-[var(--background)]/95 backdrop-blur-md"
+            : "bg-[var(--background)]/80 backdrop-blur-md"
+        }`}
+      >
+        <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <img src={Logo} alt="Logo" className="h-12 w-auto dark:invert" />
+            <span className="hidden md:block font-mono text-[10px] uppercase tracking-widest text-[var(--text-muted)]">
+              System.Protocol v2.4
+            </span>
+          </div>
+
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center gap-8 font-mono text-[10px] uppercase tracking-widest">
             {navItems.map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-200 font-medium"
-                >
-                  {item.label}
-                </button>
-              </li>
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors"
+              >
+                {item.label}
+              </button>
             ))}
-          </ul>
-          <div className="flex items-center space-x-4">
-            {/* Theme Toggle */}
+          </div>
+
+          <div className="flex items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-105"
+              className="p-2 border border-[var(--border)] hover:bg-[var(--surface)] transition-all"
             >
               {theme === "light" ? (
-                <Moon className="w-5 h-5 text-gray-800 dark:text-gray-200" />
+                <Moon className="w-4 h-4" />
               ) : (
-                <Sun className="w-5 h-5 text-gray-800 dark:text-gray-200" />
+                <Sun className="w-4 h-4" />
               )}
             </button>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-105"
+              className="md:hidden p-2 border border-[var(--border)] hover:bg-[var(--surface)] transition-all"
             >
               {isMobileMenuOpen ? (
-                <X className="w-5 h-5 text-gray-800 dark:text-gray-200" />
+                <X className="w-4 h-4" />
               ) : (
-                <Menu className="w-5 h-5 text-gray-800 dark:text-gray-200" />
+                <Menu className="w-4 h-4" />
               )}
             </button>
           </div>
-        </div>
+        </nav>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg">
-            <ul className="space-y-3">
+          <div className="md:hidden border-t border-[var(--border)] bg-[var(--background)]">
+            <div className="px-6 py-4 space-y-1">
               {navItems.map((item) => (
-                <li key={item.id}>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300 font-medium py-2"
-                  >
-                    {item.label}
-                  </button>
-                </li>
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left font-mono text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors py-3 border-b border-[var(--border)] last:border-0"
+                >
+                  {item.label}
+                </button>
               ))}
-            </ul>
+            </div>
           </div>
         )}
-      </nav>
-    </header>
+      </header>
+    </>
   );
 };
 

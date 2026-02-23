@@ -1,122 +1,86 @@
-import React from 'react';
-import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
-
 const Experience = () => {
   const experiences = [
     {
-      title: 'Software Engineer Intern',
-      company: 'Alex Eagles Aero Design',
-      location: 'Alexandria, Egypt',
-      period: '2024 – Present',
-      description: 'Leading frontend development for autonomous drone systems, implementing real-time data visualization and control interfaces using React and modern web technologies.',
-      highlights: [
-        'Developed responsive web interfaces for drone control systems',
-        'Integrated real-time data visualization components',
-        'Collaborated with hardware teams for seamless system integration',
-        'Implemented secure authentication and user management systems'
-      ],
-      current: true
+      title: "Software Engineer Intern",
+      company: "Alex Eagles Aero Design",
+      period: "2024 — PRESENT // ALEXANDRIA",
+      description:
+        "Developed Python scripts for autonomous drone movement and obstacle avoidance. Implemented mapping techniques for terrain analysis and real-time decision-making in flight operations. Applied embedded systems and software architecture knowledge in UAV control systems.",
+      tags: ["PYTHON", "DRONEKIT", "REACT", "EMBEDDED SYSTEMS"],
+      current: true,
     },
     {
-      title: 'Software Engineer Intern',
-      company: 'ALX',
-      location: 'Remote',
-      period: '2023 – 2024',
-      description: 'Participated in intensive software engineering program focused on full-stack development, algorithms, and system design with hands-on projects.',
-      highlights: [
-        'Completed comprehensive full-stack development curriculum',
-        'Built scalable web applications using modern frameworks',
-        'Practiced algorithmic problem-solving and data structures',
-        'Collaborated on team projects using Agile methodologies'
-      ],
-      current: false
-    }
+      title: "Software Engineer Intern",
+      company: "ALX",
+      period: "2023 — 2024 // REMOTE",
+      description:
+        "Completed intensive training in software engineering fundamentals through real-world projects and peer collaboration. Developed strong skills in system programming, data structures, and backend development with a DevOps mindset.",
+      tags: ["C", "PYTHON", "DATA STRUCTURES", "LINUX", "GIT"],
+      current: false,
+    },
   ];
 
   return (
-    <section id="experience" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Experience
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-blue-600 mx-auto rounded-full"></div>
-          </div>
+    <section
+      id="experience"
+      className="py-32 bg-[var(--surface)]/30 border-y border-[var(--border)]"
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-20">
+          <h2 className="font-mono text-[var(--primary)] text-xs mb-4 uppercase tracking-[0.5em]">
+            02. Experience Logs
+          </h2>
+          <h3 className="text-4xl font-black text-[var(--text)]">Professional Trajectory</h3>
+        </div>
 
-          {/* Timeline */}
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 md:left-1/2 transform md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-500 to-blue-600"></div>
-
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative mb-12 last:mb-0">
-                {/* Timeline Dot */}
-                <div className={`absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full ${
-                  exp.current 
-                    ? 'bg-teal-500 shadow-lg shadow-teal-500/30' 
-                    : 'bg-blue-500 shadow-lg shadow-blue-500/30'
-                } z-10`}>
-                  {exp.current && (
-                    <div className="absolute inset-0 rounded-full bg-teal-500 animate-ping opacity-75"></div>
-                  )}
-                </div>
-
-                {/* Content Card */}
-                <div className={`ml-16 md:ml-0 ${
-                  index % 2 === 0 ? 'md:mr-1/2 md:pr-8' : 'md:ml-1/2 md:pl-8'
-                }`}>
-                  <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
-                    {/* Header */}
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                      <div className="mb-2 sm:mb-0">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-200">
-                          {exp.title}
-                        </h3>
-                        <p className="text-lg text-teal-600 dark:text-teal-400 font-semibold">
-                          {exp.company}
-                        </p>
-                      </div>
-                      
-                      {exp.current && (
-                        <span className="inline-flex items-center px-3 py-1 bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 rounded-full text-sm font-medium">
-                          Current
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Meta Information */}
-                    <div className="flex flex-wrap gap-4 mb-4 text-sm text-gray-600 dark:text-gray-400">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        {exp.period}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
-                        {exp.location}
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                      {exp.description}
-                    </p>
-
-                    {/* Highlights */}
-                    <ul className="space-y-2">
-                      {exp.highlights.map((highlight, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-gray-600 dark:text-gray-400">
-                          <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-sm">{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+        <div className="space-y-16 relative before:absolute before:left-[11px] before:top-0 before:h-full before:w-[1px] before:bg-[var(--border)]">
+          {experiences.map((exp, index) => (
+            <div key={index} className="relative pl-12">
+              {/* Timeline dot */}
+              <div
+                className={`absolute left-0 top-1.5 w-6 h-6 bg-[var(--background)] border ${
+                  exp.current ? "border-[var(--primary)]" : "border-[var(--text-muted)]"
+                } flex items-center justify-center`}
+              >
+                <div
+                  className={`w-2 h-2 ${
+                    exp.current ? "bg-[var(--primary)]" : "bg-[var(--text-muted)]"
+                  }`}
+                ></div>
               </div>
-            ))}
-          </div>
+
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <div>
+                  <h4 className="text-2xl font-bold text-[var(--text)]">{exp.title}</h4>
+                  <p
+                    className={`font-mono text-xs uppercase mt-1 ${
+                      exp.current ? "text-[var(--primary)]" : "text-[var(--text-muted)]"
+                    }`}
+                  >
+                    {exp.company}
+                  </p>
+                </div>
+                <span className="font-mono text-[10px] text-[var(--text-muted)] mt-2 md:mt-0 px-3 py-1 border border-[var(--border)]">
+                  {exp.period}
+                </span>
+              </div>
+
+              <p className="text-[var(--text-muted)] max-w-3xl text-sm leading-relaxed mb-6">
+                {exp.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {exp.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 text-[10px] font-mono bg-[var(--border)] text-[var(--text-muted)]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
