@@ -10,6 +10,7 @@ const Projects = () => {
       description:
         "Technical Project Lead for a 6-person team building a full-stack academic management platform unifying learning, administration, and communication for five user roles — students, instructors, teaching assistants, administrators, and IT administrators. Owned frontend architecture, authentication, shared UI components, and the API layer, and extended the platform to mobile with a Flutter app on the same backend.",
       image: EduVerseImage,
+      link: "https://eduverse-pi.vercel.app/",
       tags: ["Full-Stack", "EdTech"],
       techStack: "React / NestJS / Flutter",
       technologies: [
