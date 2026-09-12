@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, Download } from "lucide-react";
+import CvFile from "../assets/Tarek Mohamed Salah.pdf";
 
 const FloatingShapes = () => {
   return (
@@ -163,7 +164,7 @@ const Hero = () => {
               Initialize Projects <ArrowRight className="w-4 h-4" />
             </button>
             <a
-              href="./src/assets/Tarek Mohamed Salah.pdf"
+              href={CvFile}
               download="Tarek Mohamed Salah.pdf"
               className="border border-[var(--border)] font-mono text-xs font-bold uppercase tracking-widest px-10 py-5 hover:bg-[var(--surface)] transition-all flex items-center gap-2 text-[var(--text)]"
             >
