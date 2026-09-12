@@ -29,7 +29,7 @@ const Education = () => {
                 2021 — 2026
               </span>
               <span className="font-mono text-[10px] text-[var(--primary)] px-3 py-1 border border-[var(--primary)]/20 bg-[var(--primary)]/5">
-                GPA: 3.41/4.0 — EXCELLENT
+                GPA: 3.42/4.0 — EXCELLENT
               </span>
             </div>
             <p className="text-[var(--text-muted)] text-sm mb-6 leading-relaxed">

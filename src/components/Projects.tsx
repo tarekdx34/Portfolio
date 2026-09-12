@@ -2,12 +2,38 @@ import { ExternalLink } from "lucide-react";
 import MyTripImage from "../assets/MyTrip Website.png";
 import DroneImage from "../assets/Autonomus drone Project.jpg";
 import AjarlyImage from "../assets/Ajarly.png";
+import EduVerseImage from "../assets/EduverseLanding.png";
 const Projects = () => {
   const projects = [
     {
+      title: "EduVerse - Academic Management Platform",
+      description:
+        "Technical Project Lead for a 6-person team building a full-stack academic management platform unifying learning, administration, and communication for five user roles — students, instructors, teaching assistants, administrators, and IT administrators. Owned frontend architecture, authentication, shared UI components, and the API layer, and extended the platform to mobile with a Flutter app on the same backend.",
+      image: EduVerseImage,
+      tags: ["Full-Stack", "EdTech"],
+      techStack: "React / NestJS / Flutter",
+      technologies: [
+        "React",
+        "TypeScript",
+        "NestJS",
+        "MySQL",
+        "Python (FastAPI)",
+        "Docker",
+        "Flutter",
+        "Supabase",
+        "Socket.IO",
+      ],
+      features: [
+        "Role-based dashboards for all 5 user roles",
+        "Backend REST APIs for core academic workflows",
+        "Architected the Question Bank & Exam Generation modules",
+        "Integrated Google Drive, YouTube & Python-based AI services",
+      ],
+    },
+    {
       title: "Ajarly - Rental Platform",
       description:
-        "A comprehensive real estate rental ecosystem connecting property owners, brokers, and renters in Egypt. Led frontend development and contributed significantly to backend architecture, building a production-ready system with JWT authentication, booking with conflict handling, payment simulation, and analytics.",
+        "Led a 3-person team building a rental platform connecting property owners, brokers, and renters in Egypt. Directed frontend development and built major backend modules, delivering a production-ready system with JWT authentication, booking with conflict handling, payment simulation, and analytics.",
       image: AjarlyImage,
       link: "https://ajarly-frontend.vercel.app/",
       tags: ["Full-Stack", "Real Estate"],
